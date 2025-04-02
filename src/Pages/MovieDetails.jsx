@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link ,useParams} from 'react-router-dom';
 
 
-
+const apiKey= import.meta.env.VITE_PUBLIC_API_KEY
 const MovieDetails = () => {
   const {id}= useParams();
   const [movie, setMovie]= useState(null);
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?i=${id}&apikey=1cbb6889`)
+    fetch(`https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
