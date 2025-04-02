@@ -9,7 +9,7 @@ const MovieSearch = ({history, setHistory}) => {
 
 useEffect(() => {
   if(query.length > 2){
-    fetch(`http://www.omdbapi.com/?s=${query}&apikey=${apiKey}`)
+    fetch(`https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
